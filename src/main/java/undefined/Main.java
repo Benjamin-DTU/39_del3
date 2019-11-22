@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
-        //Scanner scanner = new Scanner(System.in);
+    GUI gui = new GUI();
+    GUI_Player player = new GUI_Player("Reza");
+    gui.addPlayer(player);
     }
 }
