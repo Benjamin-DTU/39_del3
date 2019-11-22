@@ -8,11 +8,9 @@ public class Account {
         if (balance < 0) {
             balance = 0;
         }
-        //balance = balance - amount;
     }
     public void deposit(int amount) {
         balance += amount;
-        //balance = balance + amount;
     }
 
     public int getBalance() {

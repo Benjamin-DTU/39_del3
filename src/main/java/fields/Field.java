@@ -17,5 +17,24 @@ public abstract class Field {
         this.specialField = specialField;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Colors getColor() {
+        return color;
+    }
+
+    public String getFieldDescription() {
+        return fieldDescription;
+    }
+
+    public boolean isSpecialField() {
+        return specialField;
+    }
 }
 
