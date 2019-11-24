@@ -4,8 +4,8 @@ public class Dice {
     private final int MAX = 6;
     private int faceValue;
 
-    public Dice(int faceValue) {
-        this.faceValue = faceValue;
+    public Dice() {
+        this.faceValue = 1;
     }
 
     public int roll() {
