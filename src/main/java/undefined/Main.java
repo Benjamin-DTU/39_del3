@@ -24,7 +24,6 @@ public class Main {
         Player player1 = new Player("Anton", new Account(), new Piece("Bil"));
         Player player2 = new Player("Reza", new Account(), new Piece("Bil2"));
         Player[] players = {player1,player2};
-        //Player[] players = {player1};
 
         Street st1 = new Street("Vej1", 1, Colors.BLUE,false);
         Street st2 = new Street("Vej2", 1, Colors.BLUE,false);
@@ -42,12 +41,11 @@ public class Main {
         Board board = new Board(fields, fields[0]);
 
         ChanceCard getOutOfJail = new ChanceCard("getOutOfJail", "Ryg gratis ud af fængslet!");
-        ChanceCard[] chanceCards = {getOutOfJail};
+        ChanceCard move3fields = new ChanceCard("move3fields","Ryk 3 fælter frem");
+        ChanceCard move5fields = new ChanceCard("move5fields", "Ryk 3 fælter frem");
+        ChanceCard[] chanceCards = {getOutOfJail,move3fields,move3fields,move5fields,move5fields};
         Monopoly monopoly = new Monopoly(players,board, chanceCards);
         monopoly.game();
-
-
-
 
     }
 }

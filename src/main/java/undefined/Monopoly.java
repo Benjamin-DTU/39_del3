@@ -87,7 +87,6 @@ public class Monopoly {
 
     private void landOnField() {
         Piece piece = currentPlayer.getPiece();
-        //System.out.println(fieldsGame[piece.getPosition()].getClass());
         if (fieldsGame[piece.getPosition()].getClass().equals(Street.getClass())) {
             landOnStreet((Street) fieldsGame[piece.getPosition()]);
         } else if (fieldsGame[piece.getPosition()].getClass().equals(GoToJail.getClass())) {
@@ -103,8 +102,21 @@ public class Monopoly {
     private void landOnChance() {
         if (chanceCards[cardPicker].getName().equals("getOutOfJail")) {
             currentPlayer.setGetOutOfJail(true);
+            System.out.println("Spiller fik fængselskort");
+        } else if (chanceCards[cardPicker].getName().equals("move3fields")) {
+            currentPlayer.getPiece().setPosition(currentPlayer.getPiece().getPosition() + 3);
+            System.out.println("Spiller rykker 3 felter frem");
+        } else if (chanceCards[cardPicker].getName().equals("move5fields")) {
+            currentPlayer.getPiece().setPosition(currentPlayer.getPiece().getPosition() + 5);
+            System.out.println("Spiller rykker 5 felter frem");
         }
-
+        if (currentPlayer.getPiece().getPosition() >= fieldsGame.length) {
+            currentPlayer.getPiece().setPosition(currentPlayer.getPiece().getPosition() - fieldsGame.length);
+        }
+        cardPicker++;
+        if (cardPicker >= chanceCards.length) {
+            cardPicker = 0;
+        }
     }
 
     private void landOnJail() {
@@ -117,7 +129,7 @@ public class Monopoly {
             jailPosition++;
         }
         currentPlayer.getPiece().setPosition(jailPosition);
-        System.out.println(currentPlayer.getName() + " er røget i fængsel på feltet " +fieldsGame[currentPlayer.getPiece().getPosition()].getName());
+        System.out.println(currentPlayer.getName() + " er røget i fængsel på feltet " + fieldsGame[currentPlayer.getPiece().getPosition()].getName());
         if (currentPlayer.isGetOutOfJail()) {
             System.out.println("Spiller bruger fængselskortet og kommer ud gratis");
             currentPlayer.setGetOutOfJail(false);
@@ -148,7 +160,7 @@ public class Monopoly {
             street.getOwner().getAccount().deposit(street.getPrice());
         } else if (street.getOwner() != null && street.getOwner() != currentPlayer && street.isBothOwned()) {
             System.out.println("DOBBELT " + currentPlayer.getName() + " landede på " + street.getOwner().getName() + "s vej " + street.getName());
-            if (currentPlayer.getAccount().getBalance() < street.getPrice()*2) {
+            if (currentPlayer.getAccount().getBalance() < street.getPrice() * 2) {
                 System.out.println(currentPlayer.getName() + " har ikke nok til at betale - spillet er tabt");
                 gameLost = true;
                 return;
