@@ -1,9 +1,6 @@
 package undefined;
 
-import fields.Field;
-import fields.GoToJail;
-import fields.Jail;
-import fields.Street;
+import fields.*;
 import gui_fields.GUI_Board;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
@@ -31,18 +28,24 @@ public class Main {
 
         Street st1 = new Street("Vej1", 1, Colors.BLUE,false);
         Street st2 = new Street("Vej2", 1, Colors.BLUE,false);
+        Chance ch1 = new Chance("Chance1", true);
         Street st3 = new Street("Vej3", 2, Colors.BROWN,false);
         Street st4 = new Street("Vej4", 2, Colors.BROWN,false);
         Street st5 = new Street("Vej5", 3, Colors.RED,false);
         Street st6 = new Street("Vej6", 3, Colors.RED,false);
+        Chance ch2 = new Chance("Chance2", true);
         Street st7 = new Street("Vej7", 4, Colors.GREEN,false);
         Street st8 = new Street("Vej8", 4, Colors.GREEN,false);
         GoToJail goToJail = new GoToJail("JailGo", true);
         Jail jail = new Jail("Jail", true);
-        Field[] fields = {st1, st2, st3, st4, jail,st5, st6, st7, st8, goToJail};
+        Field[] fields = {st1, st2, ch1, st3, st4, jail,st5, st6, ch2, st7, st8, goToJail};
         Board board = new Board(fields, fields[0]);
-        Monopoly monopoly = new Monopoly(players,board);
+
+        ChanceCard getOutOfJail = new ChanceCard("getOutOfJail", "Ryg gratis ud af fængslet!");
+        ChanceCard[] chanceCards = {getOutOfJail};
+        Monopoly monopoly = new Monopoly(players,board, chanceCards);
         monopoly.game();
+
 
 
 

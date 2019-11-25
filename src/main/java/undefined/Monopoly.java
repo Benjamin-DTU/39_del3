@@ -15,12 +15,15 @@ public class Monopoly {
     private Jail Jail = new Jail("Test", true);
     private Chance Chance = new Chance("Test", true);
     private GoToJail GoToJail = new GoToJail("Test", true);
+    private ChanceCard[] chanceCards;
+    private int cardPicker = 0;
 
-    public Monopoly(Player[] players, Board board) {
+    public Monopoly(Player[] players, Board board, ChanceCard[] chanceCards) {
         this.players = players;
         this.board = board;
         this.dice = new Dice();
         this.fieldsGame = board.getFields();
+        this.chanceCards = chanceCards;
     }
 
     public void game() {
@@ -92,6 +95,14 @@ public class Monopoly {
             landOnJail();
         } else if (fieldsGame[piece.getPosition()].getClass().equals(Chance.getClass())) {
             System.out.println("Chance");
+            landOnChance();
+        }
+
+    }
+
+    private void landOnChance() {
+        if (chanceCards[cardPicker].getName().equals("getOutOfJail")) {
+            currentPlayer.setGetOutOfJail(true);
         }
 
     }
@@ -107,7 +118,13 @@ public class Monopoly {
         }
         currentPlayer.getPiece().setPosition(jailPosition);
         System.out.println(currentPlayer.getName() + " er røget i fængsel på feltet " +fieldsGame[currentPlayer.getPiece().getPosition()].getName());
-        currentPlayer.getAccount().withdraw(1);
+        if (currentPlayer.isGetOutOfJail()) {
+            System.out.println("Spiller bruger fængselskortet og kommer ud gratis");
+            currentPlayer.setGetOutOfJail(false);
+        } else {
+            currentPlayer.getAccount().withdraw(1);
+            System.out.println("Spiller betaler 1 for af komme ud af fængslet");
+        }
     }
 
     private void landOnStreet(Street street) {
@@ -139,7 +156,6 @@ public class Monopoly {
             currentPlayer.getAccount().withdraw(street.getPrice() * 2);
             street.getOwner().getAccount().deposit(street.getPrice() * 2);
         } else System.out.println("Landed på sig egen " + street.getName());
-
     }
 
     private void checkForBothOwned(Street street) {
