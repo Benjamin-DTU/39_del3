@@ -7,12 +7,14 @@ public class Street extends Field {
     private int price;
     private Colors color;
     private Player owner;
+    private boolean bothOwned;
 
     public Street(String name, int price, Colors color, boolean specialField) {
         super(name,specialField);
         this.price = price;
         this.color = color;
         this.owner = null;
+        this.bothOwned = false;
     }
 
     public int getPrice() {
@@ -30,4 +32,13 @@ public class Street extends Field {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
+
+    public boolean isBothOwned() {
+        return bothOwned;
+    }
+
+    public void setBothOwned(boolean bothOwned) {
+        this.bothOwned = bothOwned;
+    }
+
 }
