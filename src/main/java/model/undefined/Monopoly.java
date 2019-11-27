@@ -26,25 +26,25 @@ public class Monopoly {
         this.chanceCards = chanceCards;
     }
 
-    public void game() {
-        initGame();
-        while (!gameLost) {
-            for (Player player :
-                    players) {
-                Scanner scanner = new Scanner(System.in);
-                scanner.nextLine();
+    public void game(Player player) {
+        //initGame();
+        //while (!gameLost) {
+            //for (Player player :
+             //       players) {
+               // Scanner scanner = new Scanner(System.in);
+               // scanner.nextLine();
                 currentPlayer = player;
                 System.out.println(currentPlayer.getName() + "s tur");
                 playerTurn();
                 System.out.println(players[0].getName() + players[0].getAccount().getBalance());
                 System.out.println(players[1].getName() + players[1].getAccount().getBalance());
-                if (gameLost) break;
-            }
-        }
+           //     if (gameLost) break;
+          //  }
+       // }
 
     }
 
-    private void initGame() {
+    public void initGame() {
         if (players.length == 2) {
             for (Player player :
                     players) {
@@ -196,5 +196,11 @@ public class Monopoly {
         }
     }
 
+    public Player[] getPlayers() {
+        return players;
+    }
 
+    public Boolean isGameLost() {
+        return gameLost;
+    }
 }
