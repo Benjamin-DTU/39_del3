@@ -1,4 +1,4 @@
-package undefined;
+package model.undefined;
 
 public class ChanceCard {
     private String name;

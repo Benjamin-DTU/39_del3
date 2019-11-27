@@ -1,4 +1,4 @@
-package undefined;
+package model.undefined;
 
 public class Piece {
     private String name;

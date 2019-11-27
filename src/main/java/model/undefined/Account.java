@@ -1,4 +1,4 @@
-package undefined;
+package model.undefined;
 
 public class Account {
     private int balance = 20;

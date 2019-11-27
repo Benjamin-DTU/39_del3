@@ -1,6 +1,4 @@
-package fields;
-
-import undefined.Colors;
+package model.fields;
 
 public abstract class Field {
     public String name;

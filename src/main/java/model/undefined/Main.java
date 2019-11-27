@@ -1,14 +1,6 @@
-package undefined;
+package model.undefined;
 
-import fields.*;
-import gui_fields.GUI_Board;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
-import gui_fields.GUI_Street;
-import gui_main.GUI;
-
-import java.awt.*;
-import java.util.Scanner;
+import model.fields.*;
 
 public class Main {
     public static void main(String[] args) {

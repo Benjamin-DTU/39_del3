@@ -1,4 +1,4 @@
-package undefined;
+package model.undefined;
 
 public enum Colors {
     RED,

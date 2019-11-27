@@ -1,6 +1,6 @@
-package undefined;
+package model.undefined;
 
-import fields.*;
+import model.fields.*;
 
 import java.util.Scanner;
 

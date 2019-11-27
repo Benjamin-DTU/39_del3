@@ -1,6 +1,6 @@
-package undefined;
+package model.undefined;
 
-import fields.Field;
+import model.fields.Field;
 
 public class Board {
     private Field[] fields;

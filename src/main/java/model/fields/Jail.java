@@ -1,4 +1,4 @@
-package fields;
+package model.fields;
 
 public class Jail extends Field {
 

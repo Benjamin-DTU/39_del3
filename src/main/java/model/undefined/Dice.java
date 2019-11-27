@@ -1,4 +1,4 @@
-package undefined;
+package model.undefined;
 
 public class Dice {
     private final int MAX = 6;
@@ -23,7 +23,7 @@ public class Dice {
 
     @Override
     public String toString() {
-        return "undefined.Dice{" +
+        return "model.undefined.Dice{" +
                 "faceValue=" + faceValue +
                 '}';
     }

@@ -1,4 +1,4 @@
-package fields;
+package model.fields;
 
 public class GoToJail extends Field {
     public GoToJail(String name, boolean specialField) {

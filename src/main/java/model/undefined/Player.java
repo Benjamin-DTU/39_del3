@@ -1,6 +1,4 @@
-package undefined;
-
-import fields.Street;
+package model.undefined;
 
 public class Player {
     private String name;

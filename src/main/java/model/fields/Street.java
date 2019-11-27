@@ -1,7 +1,7 @@
-package fields;
+package model.fields;
 
-import undefined.Colors;
-import undefined.Player;
+import model.undefined.Colors;
+import model.undefined.Player;
 
 public class Street extends Field {
     private int price;
