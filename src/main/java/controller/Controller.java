@@ -5,11 +5,9 @@ import gui_main.GUI;
 import model.undefined.Monopoly;
 import model.undefined.Player;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Scanner;
 
-public class Controller implements ActionListener {
+public class Controller {
     private model.undefined.Monopoly monopoly;
     private GUI gui;
 
@@ -18,10 +16,7 @@ public class Controller implements ActionListener {
         this.gui = gui;
     }
 
-    public void actionPerformed(ActionEvent e) {
-    }
-
-    public void setupAndStart() {
+    public void setupAndStart() throws InterruptedException {
         int noOfPlayers = gui.getUserInteger("Hvor mange spillere?", 2, 4);
 
         if (noOfPlayers == 2) {
@@ -30,22 +25,22 @@ public class Controller implements ActionListener {
             gui.addPlayer(pl1);
             gui.addPlayer(pl2);
 
-            //Scanner scanner = new Scanner(System.in);
-            monopoly.initGame();
+
             while (!monopoly.isGameLost()) {
-                //scanner.nextLine();
                 for (Player player :
                         monopoly.getPlayers()) {
-                    Scanner scanner = new Scanner(System.in);
-                    scanner.nextLine();
+                    //Scanner scanner = new Scanner(System.in);
+                    //scanner.nextLine();
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, false);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, false);
                     monopoly.game(player);
+                    gui.setDie(monopoly.getDice().getFaceValue());
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, true);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, true);
 
                     pl1.setBalance(monopoly.getPlayers()[0].getAccount().getBalance());
                     pl2.setBalance(monopoly.getPlayers()[1].getAccount().getBalance());
+                    Thread.sleep(1000);
 
                     if (monopoly.isGameLost()) break;
                 }

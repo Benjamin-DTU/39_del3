@@ -24,6 +24,7 @@ public class Monopoly {
         this.dice = new Dice();
         this.fieldsGame = board.getFields();
         this.chanceCards = chanceCards;
+        initGame();
     }
 
     public void game(Player player) {
@@ -202,5 +203,9 @@ public class Monopoly {
 
     public Boolean isGameLost() {
         return gameLost;
+    }
+
+    public Dice getDice() {
+        return dice;
     }
 }
