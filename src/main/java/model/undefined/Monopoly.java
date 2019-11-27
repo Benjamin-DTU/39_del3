@@ -10,7 +10,7 @@ public class Monopoly {
     private Board board;
     private Dice dice;
     private Boolean gameLost = false;
-    private Field fieldsGame[];
+    private Field[] fieldsGame;
     private Street Street = new Street("Test", 0, Colors.BLUE, false);
     private Jail Jail = new Jail("Test", true);
     private Chance Chance = new Chance("Test", true);
