@@ -85,13 +85,13 @@ public class Main {
                 GUI_Chance guich1 = new GUI_Chance("?","Chancekort","Du modtager en chancekort",Color.MAGENTA,Color.BLACK);
         GUI_Street guist3 = new GUI_Street("SLIKBUTIKKEN","M1","Du køber ejendom el. betaler husleje","1", Color.DARK_GRAY, Color.BLACK);
         GUI_Street guist4 = new GUI_Street("ISKIOSEN","M1","Du køber ejendom el. betaler husleje","1", Color.DARK_GRAY, Color.BLACK);
-                GUI_Refuge guirefuge = new GUI_Refuge();
+        GUI_Jail guijail2 = new GUI_Jail();
         GUI_Street guist5 = new GUI_Street("MUSEET","M2","Du køber ejendom el. betaler husleje","2", Color.PINK, Color.BLACK);
         GUI_Street guist6 = new GUI_Street("BIBLIOTEKET","M2","Du køber ejendom el. betaler husleje","2", Color.PINK, Color.BLACK);
                 GUI_Chance guich2 = new GUI_Chance("?","Chancekort","Du modtager en chancekort",Color.MAGENTA,Color.BLACK);
         GUI_Street guist7 = new GUI_Street("SKATERPARKEN","M2","Du køber ejendom el. betaler husleje","2", Color.YELLOW, Color.BLACK);
         GUI_Street guist8 = new GUI_Street("SWIMMINGPOOL","M2","Du køber ejendom el. betaler husleje","2", Color.YELLOW, Color.BLACK);
-                // GRATIS PARKERING HER :)
+        GUI_Refuge guirefuge = new GUI_Refuge();// GRATIS PARKERING HER :)
         GUI_Street guist9 = new GUI_Street("SPILLEHALLEN","M3","Du køber ejendom el. betaler husleje","3", Color.RED, Color.BLACK);
         GUI_Street guist10 = new GUI_Street("BIOGRAFEN","M3","Du køber ejendom el. betaler husleje","3", Color.RED, Color.BLACK);
                 GUI_Chance guich3 = new GUI_Chance("?","Chancekort","Du modtager en chancekort",Color.MAGENTA,Color.BLACK);
@@ -104,7 +104,7 @@ public class Main {
         GUI_Street guist15 = new GUI_Street("VANDLAND","M5","Du køber ejendom el. betaler husleje","5", Color.BLUE, Color.BLACK);
         GUI_Street guist16 = new GUI_Street("STRANDPROMENADEN","M5","Du køber ejendom el. betaler husleje","5", Color.BLUE, Color.BLACK);
 
-        GUI_Field[] gui_fields = {guistart, guist1,guist2,guich1,guist3, guist4,guirefuge,guist5,guist6,guich2,guist7,guist8,/* GUI PARKERING */ guist9, guist10, guich3, guist11, guist12, guijail1, guist13, guist14, guich4, guist15, guist16};
+        GUI_Field[] gui_fields = {guistart, guist1,guist2,guich1,guist3, guist4,guijail2,guist5,guist6,guich2,guist7,guist8,guirefuge,/* GUI PARKERING */ guist9, guist10, guich3, guist11, guist12, guijail1, guist13, guist14, guich4, guist15, guist16};
         GUI gui = new GUI(gui_fields);
 
         Controller controller = new Controller(monopoly,gui);
