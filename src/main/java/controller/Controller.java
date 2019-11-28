@@ -31,6 +31,13 @@ public class Controller {
                         monopoly.getPlayers()) {
                     //Scanner scanner = new Scanner(System.in);
                     //scanner.nextLine();
+
+                    /* -- Kan bruges -------------
+                    for (int i = 0; i < monopoly.getPlayers().length; i++) {
+                        gui.getFields()[monopoly.getPlayers()[i].getPiece().getPosition()].setCar(pl1, false);
+                    }
+                    ------------------------------
+                     */
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, false);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, false);
                     monopoly.game(player);
