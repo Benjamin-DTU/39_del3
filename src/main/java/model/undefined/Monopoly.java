@@ -61,6 +61,7 @@ public class Monopoly {
                     players) {
                 player.getAccount().setBalance(16);
             }
+            //for testing
         } else if (players.length == 1) {
             for (Player player :
                     players) {
