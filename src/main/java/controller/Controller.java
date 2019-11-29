@@ -28,8 +28,8 @@ public class Controller {
         //int noOfPlayers = gui.getUserInteger("Hvor mange spillere?", 2, 4);
 
         if (noOfPlayers == 2) {
-            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName());
-            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName());
+            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName(),20);
+            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName(),20);
             gui.addPlayer(pl1);
             gui.addPlayer(pl2);
 
@@ -57,9 +57,9 @@ public class Controller {
                 }
             }
         } else if (noOfPlayers == 3) {
-            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName());
-            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName());
-            GUI_Player pl3 = new GUI_Player(monopoly.getPlayers()[2].getName());
+            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName(),18);
+            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName(),18);
+            GUI_Player pl3 = new GUI_Player(monopoly.getPlayers()[2].getName(),18);
             gui.addPlayer(pl1);
             gui.addPlayer(pl2);
             gui.addPlayer(pl3);
@@ -90,10 +90,10 @@ public class Controller {
                 }
             }
         } else if (noOfPlayers == 4) {
-            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName());
-            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName());
-            GUI_Player pl3 = new GUI_Player(monopoly.getPlayers()[2].getName());
-            GUI_Player pl4 = new GUI_Player(monopoly.getPlayers()[3].getName());
+            GUI_Player pl1 = new GUI_Player(monopoly.getPlayers()[0].getName(),16);
+            GUI_Player pl2 = new GUI_Player(monopoly.getPlayers()[1].getName(),16);
+            GUI_Player pl3 = new GUI_Player(monopoly.getPlayers()[2].getName(),16);
+            GUI_Player pl4 = new GUI_Player(monopoly.getPlayers()[3].getName(),16);
             gui.addPlayer(pl1);
             gui.addPlayer(pl2);
             gui.addPlayer(pl3);
