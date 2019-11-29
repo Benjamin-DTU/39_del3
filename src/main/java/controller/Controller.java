@@ -36,9 +36,7 @@ public class Controller {
             while (!monopoly.isGameLost()) {
                 for (Player player :
                         monopoly.getPlayers()) {
-                    Scanner scanner = new Scanner(System.in);
-                    scanner.nextLine();
-
+                    gui.getUserButtonPressed(" ","ok");
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, false);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, false);
                     monopoly.game(player);
@@ -67,8 +65,7 @@ public class Controller {
             while (!monopoly.isGameLost()) {
                 for (Player player :
                         monopoly.getPlayers()) {
-                    Scanner scanner = new Scanner(System.in);
-                    scanner.nextLine();
+                    gui.getUserButtonPressed(" ","ok");
 
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, false);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, false);
@@ -102,8 +99,7 @@ public class Controller {
             while (!monopoly.isGameLost()) {
                 for (Player player :
                         monopoly.getPlayers()) {
-                    Scanner scanner = new Scanner(System.in);
-                    scanner.nextLine();
+                    gui.getUserButtonPressed(" ","ok");
 
                     gui.getFields()[monopoly.getPlayers()[0].getPiece().getPosition()].setCar(pl1, false);
                     gui.getFields()[monopoly.getPlayers()[1].getPiece().getPosition()].setCar(pl2, false);
