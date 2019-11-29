@@ -17,6 +17,7 @@ public class Monopoly {
     private GoToJail GoToJail = new GoToJail("Test", true);
     private ChanceCard[] chanceCards;
     private int cardPicker = 0;
+    private Player winnerPlayer;
 
     public Monopoly(Player[] players, Board board, ChanceCard[] chanceCards) {
         this.players = players;
@@ -34,13 +35,16 @@ public class Monopoly {
              //       players) {
                // Scanner scanner = new Scanner(System.in);
                // scanner.nextLine();
-                currentPlayer = player;
-                System.out.println(currentPlayer.getName() + "s tur");
-                playerTurn();
-                System.out.println(players[0].getName() + players[0].getAccount().getBalance());
-                System.out.println(players[1].getName() + players[1].getAccount().getBalance());
-           //     if (gameLost) break;
-          //  }
+        currentPlayer = player;
+        System.out.println(currentPlayer.getName() + "s tur");
+        playerTurn();
+        for (Player p :
+                players) {
+            System.out.println(p.getName() + p.getAccount().getBalance());
+        }
+        System.out.println();
+        //     if (gameLost) break;
+        //  }
        // }
 
     }
@@ -208,5 +212,17 @@ public class Monopoly {
 
     public Dice getDice() {
         return dice;
+    }
+
+    public Player getWinner() {
+        for (Player player :
+                players) {
+            if (winnerPlayer == null) {
+                winnerPlayer = player;
+            } else if (player.getAccount().getBalance() > winnerPlayer.getAccount().getBalance()) {
+                winnerPlayer = player;
+            }
+        }
+        return winnerPlayer;
     }
 }
