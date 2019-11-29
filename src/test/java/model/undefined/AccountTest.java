@@ -8,7 +8,7 @@ public class AccountTest {
 
     @Test
     public void withdrawTest() {
-        //Konto starter på 1000
+        //Konto starter på 20
         Account account = new Account();
         account.withdraw(2000);
         assertEquals(0, account.getBalance());
