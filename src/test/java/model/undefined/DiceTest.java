@@ -36,12 +36,12 @@ public class DiceTest {
                 }
 
             }
-            assertEquals(1000000, rolls[0], 5000);
-            assertEquals(1000000, rolls[1], 5000);
-            assertEquals(1000000, rolls[2], 5000);
-            assertEquals(1000000, rolls[3], 5000);
-            assertEquals(1000000, rolls[4], 5000);
-            assertEquals(1000000, rolls[5], 5000);
+            assertEquals(1000000, rolls[0], 50000);
+            assertEquals(1000000, rolls[1], 50000);
+            assertEquals(1000000, rolls[2], 50000);
+            assertEquals(1000000, rolls[3], 50000);
+            assertEquals(1000000, rolls[4], 50000);
+            assertEquals(1000000, rolls[5], 50000);
             System.out.println("1 : " + rolls[0]);
             System.out.println("2 : " + rolls[1]);
             System.out.println("3 : " + rolls[2]);
