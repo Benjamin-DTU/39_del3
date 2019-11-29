@@ -17,14 +17,4 @@ public class Dice {
         return faceValue;
     }
 
-    public void setFaceValue(int faceValue) {
-        this.faceValue = faceValue;
-    }
-
-    @Override
-    public String toString() {
-        return "model.undefined.Dice{" +
-                "faceValue=" + faceValue +
-                '}';
-    }
 }

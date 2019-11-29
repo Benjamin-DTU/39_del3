@@ -9,10 +9,6 @@ public class Piece {
         this.position = 0;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getPosition() {
         return position;
     }

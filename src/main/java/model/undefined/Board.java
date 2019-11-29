@@ -11,14 +11,6 @@ public class Board {
         this.currentField = currentField;
     }
 
-    public Field getCurrentField() {
-        return currentField;
-    }
-
-    public void setCurrentField(Field currentField) {
-        this.currentField = currentField;
-    }
-
     public Field[] getFields() {
         return fields;
     }
