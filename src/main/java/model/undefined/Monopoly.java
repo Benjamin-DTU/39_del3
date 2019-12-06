@@ -29,12 +29,6 @@ public class Monopoly {
     }
 
     public void game(Player player) {
-        //initGame();
-        //while (!gameLost) {
-            //for (Player player :
-             //       players) {
-               // Scanner scanner = new Scanner(System.in);
-               // scanner.nextLine();
         currentPlayer = player;
         System.out.println(currentPlayer.getName() + "s tur");
         playerTurn();
@@ -43,12 +37,9 @@ public class Monopoly {
             System.out.println(p.getName() + p.getAccount().getBalance());
         }
         System.out.println();
-        //     if (gameLost) break;
-        //  }
-       // }
 
     }
-
+    //sætter balancen efter antal spillere, der er med i spillet.
     public void initGame() {
         if (players.length == 2) {
             for (Player player :
@@ -78,9 +69,10 @@ public class Monopoly {
     private void playerTurn() {
         movePlayer();
         landOnField();
-        checkIfLost();
+        //checkIfLost();
     }
 
+    //den her metoder er overflødig, da der bliver tjekket løbende.
     private void checkIfLost() {
         for (Player player :
                 players) {
@@ -146,6 +138,7 @@ public class Monopoly {
     }
 
     private void landOnStreet(Street street) {
+        //første situ, ingen ejer af gaden, du køber den - hvis du har råd
         if (street.getOwner() == null) {
             if (currentPlayer.getAccount().getBalance() < street.getPrice()) {
                 gameLost = true;
@@ -155,6 +148,7 @@ public class Monopoly {
             currentPlayer.getAccount().withdraw(street.getPrice());
             System.out.println(currentPlayer.getName() + " køber " + street.getName());
             checkForBothOwned(street);
+         //anden situ, du lander på en andens gade
         } else if (street.getOwner() != null && street.getOwner() != currentPlayer && !street.isBothOwned()) {
             System.out.println(currentPlayer.getName() + " landede på " + street.getOwner().getName() + "s vej " + street.getName());
             if (currentPlayer.getAccount().getBalance() < street.getPrice()) {
@@ -164,6 +158,7 @@ public class Monopoly {
             }
             currentPlayer.getAccount().withdraw(street.getPrice());
             street.getOwner().getAccount().deposit(street.getPrice());
+        //tredje situ, du lander på en andens gade, men han ejer begge i samme farve
         } else if (street.getOwner() != null && street.getOwner() != currentPlayer && street.isBothOwned()) {
             System.out.println("DOBBELT " + currentPlayer.getName() + " landede på " + street.getOwner().getName() + "s vej " + street.getName());
             if (currentPlayer.getAccount().getBalance() < street.getPrice() * 2) {
@@ -173,6 +168,7 @@ public class Monopoly {
             }
             currentPlayer.getAccount().withdraw(street.getPrice() * 2);
             street.getOwner().getAccount().deposit(street.getPrice() * 2);
+        //fjerde situ, du lander på dit eget felt.
         } else System.out.println("Landed på sig egen " + street.getName());
     }
 
@@ -198,6 +194,7 @@ public class Monopoly {
         if (piece.getPosition() >= fieldsGame.length) {
             piece.setPosition(piece.getPosition() - fieldsGame.length);
             System.out.println("Modded position = " + piece.getPosition());
+            //passer start få 2 penge
             currentPlayer.getAccount().deposit(2);
         }
     }
